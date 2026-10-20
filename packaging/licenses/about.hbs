@@ -1,0 +1,26 @@
+Orchard Password Manager: licenses of the Rust crates it is built from
+======================================================================
+
+Orchard Password Manager is built from the Rust crates listed below. Each
+license text is followed by the crates (name and version) that use it.
+Generated with cargo-about from Cargo.lock by scripts/third-party-licenses.sh;
+do not edit by hand.
+
+Overview
+--------
+{{#each overview}}
+{{{name}}} ({{{id}}}): {{count}} crate(s)
+{{/each}}
+
+{{#each licenses}}
+--------------------------------------------------------------------------------
+{{{name}}} ({{{id}}})
+
+Used by:
+{{#each used_by}}
+  - {{{crate.name}}} {{{crate.version}}}{{#if crate.repository}} <{{{crate.repository}}}>{{/if}}
+{{/each}}
+
+{{{text}}}
+
+{{/each}}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Hardened-runtime exceptions: none. No code is generated at run time and
+     no libraries are loaded besides the system's. Not sandboxed: it opens
+     and saves vaults in any folder the user picks, with a backup and a
+     temporary file beside them. -->
+<plist version="1.0">
+<dict>
+</dict>
+</plist>

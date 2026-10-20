@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orchard Password Manager: your passwords in a vault only you can open</title>
+<meta name="description" content="Orchard Password Manager keeps your passwords in an encrypted KDBX vault file on your own computer. It locks itself, clears copied passwords and checks every save. No account, no cloud. Free and open source for macOS, Windows and Linux.">
+<meta name="theme-color" content="#1e1f1c">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sandboxly.github.io/orchard-password-manager/">
+<meta property="og:title" content="Orchard Password Manager: your passwords in a vault only you can open">
+<meta property="og:description" content="Orchard Password Manager keeps your passwords in an encrypted KDBX vault file on your own computer. It locks itself, clears copied passwords and checks every save. No account, no cloud. Free and open source for macOS, Windows and Linux.">
+<meta property="og:image" content="https://sandboxly.github.io/orchard-password-manager/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="style.css">
+<script src="main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="icon.png" alt="">Orchard Password Manager</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#features">Features</a>
+      <a href="#keys">Keys</a>
+      <a href="https://github.com/sandboxly/orchard-password-manager"><i class="ph ph-github-logo" aria-hidden="true"></i><span class="gh-label">GitHub</span></a>
+      <a href="#download">Download</a>
+    </nav>
+  </div>
+</header>
+
+<a class="support" href="https://ko-fi.com/sandboxly"><i class="ph ph-coffee" aria-hidden="true"></i>Enjoy Orchard Password Manager? <span>Buy me a coffee!</span></a>
+
+<main id="main">
+  <section class="hero wrap">
+    <div class="hero-tags"><p class="kicker">Version @MINOR_VERSION@</p><span class="tag">Written in Rust</span></div>
+    <h1>Your passwords, in a vault only you can open</h1>
+    <p class="lede">Orchard Password Manager keeps your logins in one encrypted file on your own computer. It locks itself when you step away, takes copied passwords off the clipboard again and checks every save before it replaces your vault. No account, no cloud, no tracking.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#download" data-hero-dl><i class="ph ph-download-simple" aria-hidden="true"></i><span>Download</span></a>
+      <span class="mute">Free and open source · <a href="#download">Other platforms</a></span>
+    </div>
+
+    <div class="stage">
+      <button class="frame shot" type="button" data-name="Vault" aria-label="Enlarge screenshot: the open vault">
+        <span class="chip">Vault</span><span class="zoom ph ph-arrows-out" aria-hidden="true"></span>
+        <img src="screenshots/hero.webp" alt="An open vault: the entries with their usernames, web addresses and groups, and the selected entry's details with its password shown and a one-time code" width="2112" height="1260">
+      </button>
+    </div>
+  </section>
+
+  <div id="features" class="features wrap">
+    <section class="why" aria-labelledby="f-why">
+      <h2 id="f-why">A vault file you own</h2>
+      <p>Your passwords stay in one file, wherever you keep it: on your disk, a USB stick or a folder you sync yourself. Nobody else holds a copy, and there's no account that can be locked or breached.</p>
+      <p>The file is a KDBX vault, the open format many password managers read and write, so you can switch apps or use another one on your phone.</p>
+      <ul class="why-list" aria-label="What you get">
+        <li><i class="ph ph-check" aria-hidden="true"></i>Strong, modern encryption</li>
+        <li><i class="ph ph-check" aria-hidden="true"></i>Works with other KDBX apps</li>
+        <li><i class="ph ph-check" aria-hidden="true"></i>No account or sign-in</li>
+        <li><i class="ph ph-check" aria-hidden="true"></i>Nothing leaves your computer</li>
+      </ul>
+    </section>
+
+    <section class="formats" aria-labelledby="f-formats">
+      <h2 id="f-formats">Opens the vaults you have</h2>
+      <p>Older vaults open as they are. The first change asks before it updates the file to the current format, and the old file stays beside it as a backup.</p>
+      <ul class="fmt-list" aria-label="Vault formats">
+        <li class="frame">KDBX 4.1</li>
+        <li class="frame">KDBX 4.0</li>
+        <li class="frame">KDBX 3.1</li>
+        <li class="frame">KDB</li>
+      </ul>
+    </section>
+
+    <section class="feature" aria-labelledby="f-copy">
+      <div>
+        <h2 id="f-copy">Copy a password, and it's gone again</h2>
+        <p>Press <kbd>Enter</kbd> or <kbd>⌘C</kbd> to copy the password, <kbd>⌘B</kbd> for the username and <kbd>⌘T</kbd> for the one-time code. After 20 seconds the password comes off the clipboard, unless you've copied something else since.</p>
+        <p>Copies are marked so clipboard histories leave them out. Passwords show only when you ask, with <kbd>F3</kbd>, and hide again after a few seconds.</p>
+      </div>
+      <button class="frame shot" type="button" data-name="Security settings" aria-label="Enlarge screenshot: security settings">
+        <span class="chip">Security settings</span><span class="zoom ph ph-arrows-out" aria-hidden="true"></span>
+        <img src="screenshots/security.webp" alt="The Settings dialog on the Security page: lock after 5 minutes, clear the clipboard after 20 seconds, show a password for 10 seconds" loading="lazy" width="2112" height="1260">
+      </button>
+    </section>
+
+    <section class="feature flip" aria-labelledby="f-generate">
+      <div>
+        <h2 id="f-generate">Strong passwords at a key press</h2>
+        <p>In the entry editor, <kbd>F2</kbd> makes a random password from your computer's secure random source. Choose the length and the kinds of characters, and leave out ones that look alike.</p>
+        <p>The strength shows as you change it, and your choices are kept for next time.</p>
+      </div>
+      <button class="frame shot" type="button" data-name="Generate password" aria-label="Enlarge screenshot: the password generator">
+        <span class="chip">Generate password</span><span class="zoom ph ph-arrows-out" aria-hidden="true"></span>
+        <img src="screenshots/editor.webp" alt="The entry editor with the password generator open: length 20, four kinds of characters, very strong" loading="lazy" width="2112" height="1260">
+      </button>
+    </section>
+
+    <section class="tools" aria-labelledby="f-tools">
+      <h2 id="f-tools">What sets it apart</h2>
+      <div class="tool-grid">
+        <article class="frame tool">
+          <i class="ph ph-shield-check" aria-hidden="true"></i>
+          <h3>Every save is checked</h3>
+          <p>A save goes to a new file first, which is opened again and compared with what you changed. Only then does it replace your vault, and the previous version stays as a backup.</p>
+        </article>
+        <article class="frame tool">
+          <i class="ph ph-lock-key" aria-hidden="true"></i>
+          <h3>Locks itself</h3>
+          <p>After five minutes without a key press or click, when you quit, or right away with <kbd>⌘⇧L</kbd>. Locking saves first, then wipes the open vault from memory.</p>
+        </article>
+        <article class="frame tool">
+          <i class="ph ph-clock-countdown" aria-hidden="true"></i>
+          <h3>One-time codes</h3>
+          <p>Keep a login's two-step codes with its password. The code shows with the seconds it has left, and <kbd>⌘T</kbd> copies it.</p>
+        </article>
+        <article class="frame tool">
+          <i class="ph ph-trash" aria-hidden="true"></i>
+          <h3>A recycle bin</h3>
+          <p>Deleted entries go to the bin, and <kbd>⌘Z</kbd> brings the last one back. <kbd>F2</kbd> shows the bin, where entries go back to the group they came from.</p>
+        </article>
+        <article class="frame tool">
+          <i class="ph ph-clock-counter-clockwise" aria-hidden="true"></i>
+          <h3>Nothing lost in an edit</h3>
+          <p>Each change keeps the entry's previous version in its history, so an old password is still there when a site didn't take the new one.</p>
+        </article>
+        <article class="frame tool">
+          <i class="ph ph-funnel" aria-hidden="true"></i>
+          <h3>Find it as you type</h3>
+          <p>Start typing and the list narrows to matching titles, usernames, addresses and groups. <kbd>F5</kbd> picks the groups to show, so work and home stay apart.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="keys" class="keys" aria-labelledby="f-keys">
+      <div>
+        <h2 id="f-keys">Keys</h2>
+        <p>Every action has a key, and the key bar shows the common ones. Type to search. The mouse works too: click a copy icon in the details to copy that field.</p>
+        <p class="note">On Windows and Linux, use Ctrl instead of ⌘.</p>
+      </div>
+      <div class="fbar" aria-hidden="true">
+        <span><b>F2</b> Bin</span><span><b>F3</b> Show</span><span><b>F4</b> Edit</span><span><b>F5</b> Groups</span><span><b>F7</b> New</span><span><b>F8</b> Delete</span><span><b>F9</b> Settings</span><span><b>F10</b> Quit</span>
+      </div>
+      <dl class="frame key-table">
+        <span class="chip">Keys</span>
+        <div><dt>Enter or ⌘C</dt><dd>Copy the password</dd></div>
+        <div><dt>⌘B / ⌘U</dt><dd>Copy the username / web address</dd></div>
+        <div><dt>⌘T</dt><dd>Copy the one-time code</dd></div>
+        <div><dt>F3</dt><dd>Show or hide the password</dd></div>
+        <div><dt>F4 / F7</dt><dd>Edit the entry / new entry</dd></div>
+        <div><dt>F8</dt><dd>Move to the recycle bin</dd></div>
+        <div><dt>⌘Z</dt><dd>Put the last one back</dd></div>
+        <div><dt>F2</dt><dd>Show the recycle bin</dd></div>
+        <div><dt>F5</dt><dd>Choose the groups to show</dd></div>
+        <div><dt>Esc</dt><dd>Clear the search</dd></div>
+        <div><dt>F2 or ⌘G</dt><dd>Generate a password (in the editor)</dd></div>
+        <div><dt>⌘⇧L</dt><dd>Lock the vault</dd></div>
+        <div><dt>⌘O / ⌘X</dt><dd>Open another vault / close it</dd></div>
+        <div><dt>⌘, or F9</dt><dd>Settings</dd></div>
+        <div><dt>⌘+ ⌘− ⌘0</dt><dd>Font size</dd></div>
+      </dl>
+    </section>
+
+    <section class="gallery" aria-labelledby="f-gallery">
+      <h2 id="f-gallery">Screenshots</h2>
+      <div class="gallery-grid">
+        <figure class="wide">
+          <button class="frame shot" type="button" data-name="Show groups" aria-label="Enlarge screenshot: choosing the groups to show">
+            <span class="chip">Show groups</span><span class="zoom ph ph-arrows-out" aria-hidden="true"></span>
+            <img src="screenshots/groups.webp" alt="The group filter over the vault, with some groups checked and the number of entries in each" loading="lazy" width="2112" height="1260">
+          </button>
+          <figcaption>Show only the groups you need right now</figcaption>
+        </figure>
+        <figure class="tall">
+          <button class="frame shot" type="button" data-name="Narrow window" aria-label="Enlarge screenshot: narrow window">
+            <span class="chip">Narrow window</span><span class="zoom ph ph-arrows-out" aria-hidden="true"></span>
+            <img src="screenshots/narrow.webp" alt="The vault in a tall, narrow window" loading="lazy" width="1144" height="1680">
+          </button>
+          <figcaption>The layout adapts to a tall, narrow window</figcaption>
+        </figure>
+        <figure>
+          <button class="frame shot" type="button" data-name="Unlock vault" aria-label="Enlarge screenshot: unlocking a vault">
+            <span class="chip">Unlock vault</span><span class="zoom ph ph-arrows-out" aria-hidden="true"></span>
+            <img src="screenshots/unlock.webp" alt="The unlock screen with the vault file and the master password" loading="lazy" width="2112" height="1260">
+          </button>
+          <figcaption>One master password opens the vault</figcaption>
+        </figure>
+        <figure>
+          <button class="frame shot" type="button" data-name="Light scheme" aria-label="Enlarge screenshot: light color scheme">
+            <span class="chip">Light scheme</span><span class="zoom ph ph-arrows-out" aria-hidden="true"></span>
+            <img src="screenshots/light.webp" alt="The vault in a light color scheme" loading="lazy" width="2112" height="1260">
+          </button>
+          <figcaption>Color schemes shared with the other Orchard apps</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="frame family" aria-labelledby="f-family">
+      <img src="commander-icon.png" alt="" width="64" height="64">
+      <div>
+        <h2 id="f-family">Part of the Orchard family</h2>
+        <p>Orchard Commander is a two-panel file manager, Orchard Music Player plays the music you own and Orchard Download Manager brings big files home safely. All of them share the same look and color schemes, and all are free and open source.</p>
+      </div>
+      <div class="family-links">
+        <a class="btn" href="https://sandboxly.github.io/orchard-commander/"><span>Orchard Commander</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+        <a class="btn" href="https://sandboxly.github.io/orchard-music-player/"><span>Orchard Music Player</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+        <a class="btn" href="https://sandboxly.github.io/orchard-download-manager/"><span>Orchard Download Manager</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+      </div>
+    </section>
+  </div>
+
+  <section id="download" class="download" aria-labelledby="dl-title">
+    <div class="wrap">
+      <p class="kicker">Version @VERSION@</p>
+      <h2 id="dl-title">Download Orchard Password Manager</h2>
+      <div class="dl-grid">
+        <div class="frame dl" data-os="macos" data-label="macOS">
+          <span class="chip">macOS</span><span class="badge">Your system</span>
+          <i class="ph ph-apple-logo" aria-hidden="true"></i>
+          <p class="req">Apple silicon · macOS 12 or later</p>
+          <div class="actions">
+            <a class="btn btn-primary" data-primary href="https://github.com/sandboxly/orchard-password-manager/releases/latest/download/Orchard-Password-Manager-macOS.dmg"><span>Download for macOS</span><i class="ph ph-download-simple" aria-hidden="true"></i></a>
+            <span class="file">Orchard-Password-Manager-macOS.dmg</span>
+            <div class="cmd"><code id="brew">brew install --cask sandboxly/tap/orchard-password-manager</code><button type="button" data-copy="brew" aria-label="Copy command"><i class="ph ph-copy" aria-hidden="true"></i></button></div>
+          </div>
+        </div>
+        <div class="frame dl" data-os="windows" data-label="Windows">
+          <span class="chip">Windows</span><span class="badge">Your system</span>
+          <i class="ph ph-windows-logo" aria-hidden="true"></i>
+          <p class="req">Windows 10 and 11 · 64-bit</p>
+          <div class="actions">
+            <a class="btn btn-primary" data-primary href="https://github.com/sandboxly/orchard-password-manager/releases/latest/download/Orchard-Password-Manager-Setup.exe"><span>Download for Windows</span><i class="ph ph-download-simple" aria-hidden="true"></i></a>
+            <span class="file">Orchard-Password-Manager-Setup.exe</span>
+            <div class="alts"><span>Also:</span><a href="https://github.com/sandboxly/orchard-password-manager/releases/latest/download/Orchard-Password-Manager-Windows.zip">Portable .zip</a></div>
+          </div>
+        </div>
+        <div class="frame dl" data-os="linux" data-label="Linux">
+          <span class="chip">Linux</span><span class="badge">Your system</span>
+          <i class="ph ph-linux-logo" aria-hidden="true"></i>
+          <p class="req">x86-64 · Ubuntu 22.04, Debian 12, Fedora 42 or newer</p>
+          <div class="actions">
+            <a class="btn btn-primary" data-primary href="https://github.com/sandboxly/orchard-password-manager/releases/latest/download/Orchard-Password-Manager-Linux-x86_64.AppImage"><span>Download for Linux</span><i class="ph ph-download-simple" aria-hidden="true"></i></a>
+            <span class="file">Orchard-Password-Manager-Linux-x86_64.AppImage</span>
+            <div class="alts"><span>Also:</span><a href="https://github.com/sandboxly/orchard-password-manager/releases/latest/download/Orchard-Password-Manager-Linux-x86_64.deb">.deb</a><a href="https://github.com/sandboxly/orchard-password-manager/releases/latest/download/Orchard-Password-Manager-Linux-x86_64.rpm">.rpm</a><a href="https://github.com/sandboxly/orchard-password-manager/releases/latest/download/Orchard-Password-Manager-Linux.tar.gz">.tar.gz</a></div>
+            <span class="file">Omarchy and Arch Linux, one command:</span>
+            <div class="cmd"><code id="omarchy">curl -fsSL https://raw.githubusercontent.com/sandboxly/orchard-password-manager/main/packaging/omarchy/install.sh | bash</code><button type="button" data-copy="omarchy" aria-label="Copy command"><i class="ph ph-copy" aria-hidden="true"></i></button></div>
+          </div>
+        </div>
+      </div>
+      <p class="dl-note">Release notes and older versions are on <a href="https://github.com/sandboxly/orchard-password-manager/releases">GitHub</a>. To get started, press <kbd>F2</kbd> to open a vault or <kbd>F3</kbd> to make a new one.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span><img src="icon.png" alt="" width="18" height="18">Orchard Password Manager · MIT License</span>
+    <a href="https://sandboxly.github.io/orchard-commander/">Orchard Commander</a>
+    <a href="https://sandboxly.github.io/orchard-music-player/">Orchard Music Player</a>
+    <a href="https://sandboxly.github.io/orchard-download-manager/">Orchard Download Manager</a>
+    <a href="https://github.com/sandboxly/orchard-password-manager">Source code</a>
+    <a href="https://github.com/sandboxly/orchard-password-manager/issues">Report a problem</a>
+  </div>
+</footer>
+
+<dialog id="lightbox" class="lightbox" aria-label="Screenshot">
+  <span class="chip"></span>
+  <button class="close" type="button" aria-label="Close">Esc ✕</button>
+  <img alt="">
+</dialog>
+</body>
+</html>

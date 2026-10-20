@@ -1,0 +1,63 @@
+[package]
+name = "orchard-password-manager"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+authors = ["Stephan Lengl <lengl.stephan@gmail.com>"]
+rust-version = "1.90"
+description = "A themeable, keyboard-friendly password manager for KDBX vaults"
+
+[[bin]]
+name = "orchard-password-manager"
+path = "src/main.rs"
+
+[dependencies]
+# The Orchard apps' shared crates (Orchard Commons), pinned to a release tag
+# (for a local change to them, override with a [patch] section pointing at a
+# checkout): the character-grid renderer (wgpu + winit), color schemes, frame
+# styles and the color-schemes folder shared with Orchard Commander, the UI
+# kit (background tasks, input events, widgets, dialog forms) and the shell
+# (window, event loop, command line, settings files).
+orchard-grid = { git = "https://github.com/sandboxly/orchard-commons", tag = "v0.4.1" }
+orchard-theme = { git = "https://github.com/sandboxly/orchard-commons", tag = "v0.4.1" }
+orchard-kit = { git = "https://github.com/sandboxly/orchard-commons", tag = "v0.4.1" }
+orchard-shell = { git = "https://github.com/sandboxly/orchard-commons", tag = "v0.4.1" }
+# KDBX vaults: reading KDB/KDBX3/KDBX4, writing KDBX4 (all the crypto is
+# the crate's). Protected fields and the key are wiped when dropped.
+keepass = { version = "0.15.2", features = ["save_kdbx4", "totp"] }
+# One-time passwords: reading the otpauth:// links and KeePass's own TimeOtp
+# fields into the settings the keepass crate computes the codes from (the
+# same versions it uses).
+url = "2.2"
+base32 = "0.5"
+base64 = "0.23"
+hex = "0.4"
+# The key derivation settings for new vaults (the version type keepass uses).
+argon2 = { package = "rust-argon2", version = "3.0" }
+# Random passwords: the operating system's secure random source.
+getrandom = "0.3"
+# Wiping our own copies of secrets (the master password being typed, a
+# copied password).
+zeroize = { version = "1.8", features = ["zeroize_derive"] }
+# The clipboard, owned by one thread for as long as a copied secret is on it.
+# Wayland's own clipboard where the compositor offers it (else X11), so a
+# copy can be marked to stay out of clipboard histories there too.
+arboard = { version = "3.6", default-features = false, features = ["wayland-data-control"] }
+serde = { version = "1.0", features = ["derive"] }
+dirs = "6.0"
+log = "0.4"
+
+[build-dependencies]
+# The Windows icon and version resource (build.rs).
+embed-resource = "3"
+
+[dev-dependencies]
+tempfile = "3"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = true
+
+[profile.dev.package."*"]
+opt-level = 2

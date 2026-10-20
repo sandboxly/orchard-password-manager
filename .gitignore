@@ -1,0 +1,6 @@
+/target/
+/dist/
+.DS_Store
+/.claude/
+_site/
+.playwright-mcp/
