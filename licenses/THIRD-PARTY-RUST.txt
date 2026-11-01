@@ -4560,7 +4560,7 @@ SOFTWARE.
 MIT License (MIT)
 
 Used by:
-  - orchard-password-manager 0.1.0
+  - orchard-password-manager 1.0.0
 
 MIT License
 
